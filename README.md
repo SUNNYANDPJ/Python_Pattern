@@ -1,0 +1,2 @@
+#Python-Designed-Pattern
+>Singleton
