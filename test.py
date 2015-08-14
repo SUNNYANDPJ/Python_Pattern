@@ -6,6 +6,7 @@ from Singleton_1 import Singleton as single
 from Singleton_1_1 import Singleton as single1
 from Singleton_2 import Singleton as single2
 from SimpleFactory import SimpleFactory as sf
+import FactoryMethod as fm
 
 @single2
 class S2(object):
@@ -35,12 +36,17 @@ def main():
 	s2 = S2.Instance()
 	print id(s1),s1.display()
 	print id(s2),s2.display()
-
+	
+	print "4\n"
 	import random
 	t = random.choice(['bc','pc'])
 	course = sf.create_course(t)
 	print course.get_labs()
 
-
+	print "5\n"
+	factory = fm.get_factory()
+	course = factory.create_course()
+	print course.get_labs()
+	
 if __name__ == '__main__':
 	main()
